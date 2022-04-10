@@ -28,29 +28,29 @@ public class answerController implements Initializable { //extends Question
     private Text questionTitle;
 
     private Question temp;
+    
+    public void initData(Question question) {
+        questionChoice = question;
+        questionTitle.setText(questionChoice.getQuestionType() + " " + questionChoice.getPointValue());
+        questionText.setText(questionChoice.getQuestion());
+    }
 
     @FXML
     public void checkAnswer(ActionEvent event) {
         Button checkAnswerButton = (Button)event.getSource();
         String userAnswerID = checkAnswerButton.getId();
-        String userAnswer = userAnswerID.substring(userAnswerID.length()-2, userAnswerID.length()-1);
-        temp = Question.getInstance();
-        
-        if(userAnswer.equals(temp.getAnswer()))
+        String userAnswer = userAnswerID.substring(6, 7);
+
+        System.out.println("Correct answer: " + questionChoice.getAnswer());
+        System.out.println("User answer: " + userAnswer);
+        if (userAnswer.toLowerCase().equals(questionChoice.getAnswer().toLowerCase()))
         {
+            System.out.println("Correct!");
             
         }
         else
         {
-            
+            System.out.println("Wrong!");
         }
     }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println(Question.getInstance().getQuestion());
-        questionTitle.setText(Question.getInstance().getQuestionType());
-        questionText.setText(Question.getInstance().getQuestion());
-    }
-
 }
