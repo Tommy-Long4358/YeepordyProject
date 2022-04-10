@@ -60,7 +60,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     void quitGame(ActionEvent event) {
-
+        Platform.exit();
     }
 
     @FXML
