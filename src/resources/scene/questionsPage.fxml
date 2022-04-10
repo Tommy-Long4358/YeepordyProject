@@ -7,82 +7,82 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0" prefWidth="1033.0" style="-fx-background-color: #0f9baf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="questionTestController">
    <children>
-      <Button fx:id="AcarButton1" layoutX="21.0" layoutY="142.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="100">
+      <Button fx:id="AcarButton1" layoutX="21.0" layoutY="142.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="100">
          <font>
             <Font size="26.0" />
          </font>
       </Button>
-      <Button fx:id="CcarButton4" layoutX="21.0" layoutY="638.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="400">
+      <Button fx:id="CcarButton4" layoutX="21.0" layoutY="638.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="400">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="BcarButton3" layoutX="21.0" layoutY="473.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="300">
+      <Button fx:id="BcarButton3" layoutX="21.0" layoutY="473.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="300">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="CcarButton2" layoutX="21.0" layoutY="308.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="200">
+      <Button fx:id="CcarButton2" layoutX="21.0" layoutY="308.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="200">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="AgamingButton1" layoutX="281.0" layoutY="142.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="100">
+      <Button fx:id="AgamingButton1" layoutX="281.0" layoutY="142.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="100">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="AgamingButton2" layoutX="281.0" layoutY="308.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="200">
+      <Button fx:id="AgamingButton2" layoutX="281.0" layoutY="308.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="200">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="BgamingButton3" layoutX="281.0" layoutY="473.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="300">
+      <Button fx:id="BgamingButton3" layoutX="281.0" layoutY="473.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="300">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="CgamingButton4" layoutX="281.0" layoutY="638.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="400">
+      <Button fx:id="CgamingButton4" layoutX="281.0" layoutY="638.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="400">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="BfoodButton1" layoutX="536.0" layoutY="142.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="100">
+      <Button fx:id="BfoodButton1" layoutX="536.0" layoutY="142.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="100">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="CfoodButton2" layoutX="536.0" layoutY="308.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="200">
+      <Button fx:id="CfoodButton2" layoutX="536.0" layoutY="308.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="200">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="CfoodButton3" layoutX="536.0" layoutY="473.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="300">
+      <Button fx:id="CfoodButton3" layoutX="536.0" layoutY="473.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="300">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="DfoodButton4" layoutX="536.0" layoutY="638.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="400">
+      <Button fx:id="DfoodButton4" layoutX="536.0" layoutY="638.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="400">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="BdanielButton1" layoutX="791.0" layoutY="142.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="100">
+      <Button fx:id="BdanielButton1" layoutX="791.0" layoutY="142.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="100">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="DdanielButton4" layoutX="791.0" layoutY="638.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="400">
+      <Button fx:id="DdanielButton4" layoutX="791.0" layoutY="638.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="400">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="AdanielButton3" layoutX="791.0" layoutY="473.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="300">
+      <Button fx:id="AdanielButton3" layoutX="791.0" layoutY="473.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="300">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="CdanielButton2" layoutX="791.0" layoutY="308.0" mnemonicParsing="false" onAction="#loadQuestion" prefHeight="147.0" prefWidth="220.0" text="200">
+      <Button fx:id="CdanielButton2" layoutX="791.0" layoutY="308.0" mnemonicParsing="false" onAction="#changeSceneToQuestion" prefHeight="147.0" prefWidth="220.0" text="200">
          <font>
             <Font size="25.0" />
          </font>
