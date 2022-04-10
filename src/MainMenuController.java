@@ -65,6 +65,10 @@ public class MainMenuController implements Initializable {
 
     @FXML
     void startGame(ActionEvent event) {
-        
+        Parent root = FXMLLoader.load(Main.class.getResource("resources/scene/scene2.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
