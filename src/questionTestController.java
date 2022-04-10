@@ -79,15 +79,15 @@ public class questionTestController implements Initializable {
         scoreCounter.setText("Score: " + score);
     }
 
-    @FXML 
-    void loadQuestion(ActionEvent event) throws IOException {
+   @FXML 
+    public Question loadQuestion(ActionEvent event) throws IOException {
         Button buttonID = (Button)event.getSource();
         String buttonIDID = buttonID.getId();
 
         System.out.println("Button ID Retrived: " + buttonIDID);
 
         String questionType = "";
-        Question questionChoice;
+        Question questionChoice = new Question();
         
         if(buttonIDID.substring(buttonIDID.length() - 1).equals("1"))
         {    
@@ -95,18 +95,22 @@ public class questionTestController implements Initializable {
             
             if (questionType.equals("c"))
             {   
+                questionType = "Car";
                 questionChoice = getQuestion(0, buttonIDID, 100, questionType);  
             }
             else if (questionType.equals("g"))
             {   
+                questionType = "Gaming";
                 questionChoice = getQuestion(4, buttonIDID, 100, questionType);  
             }
             else if (questionType.equals("f"))
             {   
+                questionType = "Food";
                 questionChoice = getQuestion(8, buttonIDID, 100, questionType);  
             }
             else if (questionType.equals("d"))
             {   
+                questionType = "Daniel";
                 questionChoice = getQuestion(12, buttonIDID, 100, questionType);  
             }
         }
@@ -116,19 +120,23 @@ public class questionTestController implements Initializable {
             
             if (questionType.equals("c"))
             {   
-                questionChoice = getQuestion(1, buttonIDID, 200, questionType);  
+                questionType = "Car";
+                questionChoice = getQuestion(0, buttonIDID, 200, questionType);  
             }
             else if (questionType.equals("g"))
             {   
-                questionChoice = getQuestion(5, buttonIDID, 200, questionType);  
+                questionType = "Gaming";
+                questionChoice = getQuestion(4, buttonIDID, 200, questionType);  
             }
             else if (questionType.equals("f"))
             {   
-                questionChoice = getQuestion(9, buttonIDID, 200, questionType);  
+                questionType = "Food";
+                questionChoice = getQuestion(8, buttonIDID, 200, questionType);  
             }
             else if (questionType.equals("d"))
             {   
-                questionChoice = getQuestion(13, buttonIDID, 200, questionType);  
+                questionType = "Daniel";
+                questionChoice = getQuestion(12, buttonIDID, 200, questionType);  
             }
         }
         else if(buttonIDID.substring(buttonIDID.length() - 1).equals("3"))
@@ -137,19 +145,23 @@ public class questionTestController implements Initializable {
             
             if (questionType.equals("c"))
             {   
-                questionChoice = getQuestion(2, buttonIDID, 300, questionType);  
+                questionType = "Car";
+                questionChoice = getQuestion(0, buttonIDID, 300, questionType);  
             }
             else if (questionType.equals("g"))
             {   
-                questionChoice = getQuestion(6, buttonIDID, 300, questionType);  
+                questionType = "Gaming";
+                questionChoice = getQuestion(4, buttonIDID, 300, questionType);  
             }
             else if (questionType.equals("f"))
             {   
-                questionChoice = getQuestion(10, buttonIDID, 300, questionType);  
+                questionType = "Food";
+                questionChoice = getQuestion(8, buttonIDID, 300, questionType);  
             }
             else if (questionType.equals("d"))
             {   
-                questionChoice = getQuestion(14, buttonIDID, 300, questionType);  
+                questionType = "Daniel";
+                questionChoice = getQuestion(12, buttonIDID, 300, questionType);  
             }
         }
         else if(buttonIDID.substring(buttonIDID.length() - 1).equals("4"))
@@ -158,29 +170,43 @@ public class questionTestController implements Initializable {
             
             if (questionType.equals("c"))
             {   
-                questionChoice = getQuestion(3, buttonIDID, 400, questionType);  
+                questionType = "Car";
+                questionChoice = getQuestion(0, buttonIDID, 400, questionType);  
             }
             else if (questionType.equals("g"))
             {   
-                questionChoice = getQuestion(7, buttonIDID, 400, questionType);  
+                questionType = "Gaming";
+                questionChoice = getQuestion(4, buttonIDID, 400, questionType);  
             }
             else if (questionType.equals("f"))
             {   
-                questionChoice = getQuestion(11, buttonIDID, 400, questionType);  
+                questionType = "Food";
+                questionChoice = getQuestion(8, buttonIDID, 400, questionType);  
             }
             else if (questionType.equals("d"))
             {   
-                questionChoice = getQuestion(15, buttonIDID, 400, questionType);  
+                questionType = "Daniel";
+                questionChoice = getQuestion(12, buttonIDID, 400, questionType);  
             }
         }
-
-        Parent root = FXMLLoader.load(Main.class.getResource("resources/scene/genericQuestion.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        return questionChoice;
     }
+    
+    public void changeSceneToQuestion(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("resources/scene/genericQuestion.fxml"));
+        Parent viewQuestion = loader.load();
 
+        Scene viewQuestionScene = new Scene(viewQuestion);
+
+        answerController controller = loader.getController();
+        controller.initData(loadQuestion(event));
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(viewQuestionScene);
+        window.show();
+    }
+    
     @FXML
     void wrongAnswer(ActionEvent event) throws URISyntaxException {
         Media backgroundMusic = new Media(Main.class.getResource("resources/sounds/bruh.wav").toURI().toString());
