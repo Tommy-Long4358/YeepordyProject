@@ -1,6 +1,8 @@
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -74,7 +76,7 @@ public class questionTestController implements Initializable {
     }
 
     @FXML 
-    public Question loadQuestion(ActionEvent event) throws IOException {
+    public Question loadQuestion(ActionEvent event) throws IOException, URISyntaxException {
         Button buttonID = (Button)event.getSource();
         String buttonIDID = buttonID.getId();
 
@@ -186,7 +188,7 @@ public class questionTestController implements Initializable {
         return questionChoice;
     }
 
-    public void changeSceneToQuestion(ActionEvent event) throws IOException {
+    public void changeSceneToQuestion(ActionEvent event) throws IOException, URISyntaxException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("resources/scene/genericQuestion.fxml"));
         Parent viewQuestion = loader.load();
@@ -207,9 +209,11 @@ public class questionTestController implements Initializable {
         scoreCounter.setText("Score: " + totalScore); 
     }
 
-    public Question getQuestion(int questionLineNumber, String buttonIDID, int score, String questionType) throws IOException {
+    public Question getQuestion(int questionLineNumber, String buttonIDID, int score, String questionType) throws IOException, URISyntaxException {
         System.out.println("Question Line Number: " + questionLineNumber);
-        String line = Files.readAllLines(Paths.get("QuestionsPool.txt")).get(questionLineNumber);
+        URL url = Main.class.getResource("resources/QuestionsPool.txt");
+        Path questionPool = Paths.get(url.toURI());
+        String line = Files.readAllLines(questionPool).get(questionLineNumber);
         String question = line.substring(0, line.indexOf("@"));
 
         String answer = line.substring(line.indexOf("@") + 1);
